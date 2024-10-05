@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "880264147655",
+    "firebase_url": "https://new-memory-plant-default-rtdb.firebaseio.com",
+    "project_id": "new-memory-plant",
+    "storage_bucket": "new-memory-plant.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:880264147655:android:80df1f0f2a8a9a017cc4e2",
+        "android_client_info": {
+          "package_name": "com.example.new_memory_plant"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "880264147655-ktmr1r86pl8csj247fa53usi9vkhdkmb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.new_memory_plant",
+            "certificate_hash": "37638d9e2b21609f4cc63a75e423d66aa8539d44"
+          }
+        },
+        {
+          "client_id": "880264147655-70j3i86ls2cnf961hk5db3tksavutr23.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD77zXMfJ5Y2hJzwiSy1-2kUbYYvmbniXk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "880264147655-70j3i86ls2cnf961hk5db3tksavutr23.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
