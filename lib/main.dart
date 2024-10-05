@@ -24,7 +24,7 @@ class SignInScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Google Sign In로그인!')),    //구글 로그인
+      appBar: AppBar(title: Text('Google Sign In')),    //구글 로그인
       body: Center(
         child: ElevatedButton(
           onPressed: () async {
