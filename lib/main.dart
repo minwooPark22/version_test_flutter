@@ -24,7 +24,7 @@ class SignInScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Google Sign In')),    //구글 로그인
+      appBar: AppBar(title: Text('Google Sign In')), // 구글 로그인
       body: Center(
         child: ElevatedButton(
           onPressed: () async {
@@ -47,12 +47,69 @@ class SignInScreen extends StatelessWidget {
                   "displayName": user.displayName,
                 });
                 print('User saved to Firebase: ${user.displayName}');
+
+                // 로그인 후 메인 화면으로 이동
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => HomeScreen(displayName: user.displayName!),
+                  ),
+                );
               }
             } catch (e) {
               print(e);
             }
           },
-          child: Text('Sign In with Google'),
+          child: Text('google log in!!'),
+        ),
+      ),
+    );
+  }
+}
+
+class HomeScreen extends StatefulWidget {
+  final String displayName;
+
+  HomeScreen({required this.displayName});
+
+  @override
+  _HomeScreenState createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  final TextEditingController _textController = TextEditingController();
+
+  void _saveToDatabase() async {
+    final user = FirebaseAuth.instance.currentUser;
+    if (user != null) {
+      DatabaseReference ref = FirebaseDatabase.instance.ref("users").child(user.uid).child("entries");
+      await ref.push().set({
+        "text": _textController.text,
+        "timestamp": DateTime.now().toIso8601String(),
+      });
+      print('Text saved to Firebase: ${_textController.text}');
+      _textController.clear(); // 텍스트 필드 비우기
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text('Welcome ${widget.displayName}!')),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          children: [
+            TextField(
+              controller: _textController,
+              decoration: InputDecoration(labelText: 'Enter your text here'),
+            ),
+            SizedBox(height: 10),
+            ElevatedButton(
+              onPressed: _saveToDatabase,
+              child: Text('Save to Database!'),
+            ),
+          ],
         ),
       ),
     );
