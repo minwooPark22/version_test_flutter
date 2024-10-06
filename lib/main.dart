@@ -60,7 +60,7 @@ class SignInScreen extends StatelessWidget {
               print(e);
             }
           },
-          child: Text('google log in!'),
+          child: Text('google log in!!'),
         ),
       ),
     );
