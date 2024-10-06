@@ -60,7 +60,7 @@ class SignInScreen extends StatelessWidget {
               print(e);
             }
           },
-          child: Text('저장 얍!'),
+          child: Text('google log in'),
         ),
       ),
     );
@@ -107,7 +107,7 @@ class _HomeScreenState extends State<HomeScreen> {
             SizedBox(height: 10),
             ElevatedButton(
               onPressed: _saveToDatabase,
-              child: Text('Save to Database'),
+              child: Text('Save to Database!'),
             ),
           ],
         ),
